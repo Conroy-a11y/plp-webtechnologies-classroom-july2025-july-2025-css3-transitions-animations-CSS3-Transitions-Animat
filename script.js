@@ -36,3 +36,37 @@ let globalMultiplier = 2;
       const result = calculateSum(5, 7); // Uses parameters + global scope
       document.getElementById('result').textContent = `Result: ${result}`;
     });
+
+    //Part3
+
+     // Reusable function to toggle a class on an element
+    function toggleClass(element, className) {
+      element.classList.toggle(className);
+    }
+
+    // Animate box on button click
+    const box = document.getElementById('box');
+    document.getElementById('animateBtn').addEventListener('click', () => {
+      toggleClass(box, 'animate');
+    });
+
+    // Flip card on click
+    const card = document.getElementById('card');
+    card.addEventListener('click', () => {
+      toggleClass(card, 'flip');
+    });
+
+    // Toggle spinner visibility
+    const spinner = document.getElementById('spinner');
+    document.getElementById('toggleSpinnerBtn').addEventListener('click', () => {
+      spinner.style.display = spinner.style.display === 'block' ? 'none' : 'block';
+    });
+
+    // Show modal with auto-hide
+    const modal = document.getElementById('modal');
+    document.getElementById('showModalBtn').addEventListener('click', () => {
+      modal.classList.add('show');
+      setTimeout(() => {
+        modal.classList.remove('show');
+      }, 2000); // hides after 2 seconds
+    });
